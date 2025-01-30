@@ -4,8 +4,10 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
   const { method, url } = req
-  console.log(method, url)
-  res.render('index', { title: 'Inicial' })
+  const { statusCode } = res
+  console.log(method, url, statusCode)
+  res
+  .render('index', { title: 'Inicial' })
 })
 
 export default router
